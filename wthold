@@ -1,5 +1,27 @@
 #!/bin/bash
 
+
+check_installed() {
+    should_not_run=no
+
+    fzf --version > /dev/null
+    if [ $? -ne 0 ]; then
+        echo fzf not installed. 
+        echo Install fzf from your package manager or visit https://github.com/junegunn/fzf
+        should_not_run=yes
+    fi
+    bc --version > /dev/null
+    if [ $? -ne 0 ]; then
+        echo bc utility not installed. 
+        echo Install bc from your package manager.
+        should_not_run=yes
+    fi
+    if [ "$should_not_run" = "yes" ]; then
+        exit 1
+    fi
+}
+
+check_installed
 rundir=$(realpath $0)
 rundir=$(dirname $rundir)
 # echo $rundir
