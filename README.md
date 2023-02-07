@@ -12,9 +12,9 @@ tax rate must be a number between 1 and 100.
 ## How to use WTHOLD
 1. Clone the repository: `git clone https://github.com/lefmanos/wthold.git`
 2. Change into the directory: cd wthold
-3. Make the script executable: chmod +x wthold.sh
+3. Make the script executable: chmod +x wthold
 4. Install the [fzf](https://github.com/junegunn/fzf) utility 
-5. Run the script: ./wthold.sh [tax-percentage]
+5. Run the script: ./wthold [tax-percentage]
 
 If you provide a tax percentage and an income as arguments, WTHOLD will compute
 the tax withholding based on those values. If no argument is provided, WTHOLD
