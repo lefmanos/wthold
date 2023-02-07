@@ -1,3 +1,6 @@
 #!/bin/bash
 
-fzf -q "100" --preview="./bc_wrapper {q} $1" --preview-window 60
+rundir=$(realpath $0)
+rundir=$(dirname $rundir)
+
+fzf -q "100" --preview="$rundir/wthold_calc {q} $1" --preview-window 60
