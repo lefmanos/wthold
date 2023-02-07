@@ -1,0 +1,20 @@
+#!/bin/bash
+
+price=$1
+percentage=$2
+[ -z $price ] && exit
+[ -z $percentage ] && percentage=24
+
+echo price $price 
+echo percentage $percentage
+printf "$1 is $percentage%% of "
+echo "scale=2; $1 / (($percentage)/100.0)" | bc -l
+printf "$1\'s  $percentage%% is "
+echo "scale=2; $1 * (($percentage)/100.0)" | bc -l
+
+echo
+helper=$(echo "scale=2; $1 / ((100.0 - $percentage)/100.0)" | bc -l)
+echo "$1 is $helper - $percentage%"
+
+printf "$1 - $percentage%% is "
+echo "scale=2; $1 * ((100.0 - $percentage)/100.0)" | bc -l

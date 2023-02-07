@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fzf -q "100" --preview="./bc_wrapper {q} $1" --preview-window 60
