@@ -6,7 +6,8 @@ percentage=$2
 [ -z $percentage ] && percentage=24
 
 echo price $price 
-echo percentage $percentage
+echo taxrate $percentage%
+echo
 printf "$1 is $percentage%% of "
 echo "scale=2; $1 / (($percentage)/100.0)" | bc -l
 printf "$1\'s  $percentage%% is "
