@@ -2,5 +2,7 @@
 
 rundir=$(realpath $0)
 rundir=$(dirname $rundir)
+# echo $rundir
+# exit
 
-fzf -q "100" --preview="$rundir/wthold_calc {q} $1" --preview-window 60
+echo |fzf -q "100" --preview="$rundir/wthold_calc {q} $1" --preview-window 60
